@@ -1,0 +1,80 @@
+.top-menu {
+
+    background:brown;
+
+    padding: 2px 15px;
+
+    text-align: left;
+
+    display: flex;
+
+    justify-content:start;
+
+    font-size: 34px;
+
+    color:blanchedalmond;
+
+}
+
+
+
+
+.center {
+
+    display: flex;
+
+    justify-content: center;
+
+    margin-bottom: 5rem;
+
+    color:darkred;
+
+    font-style: oblique;
+
+    font-size: 24px;
+
+  }
+
+
+
+  .top{
+
+    display: flex;
+
+    justify-content: center;
+
+      margin-top: 2rem;
+
+      margin-bottom: 3rem;
+
+      color:darkgreen;
+
+    font-style: oblique;
+
+    font-size: 36px;
+
+  }
+
+  button{
+
+      margin-right:3rem;
+
+      margin-left:3rem;
+
+      min-width: 5rem;
+
+      border:none;
+
+      color:blanchedalmond;
+
+      padding: 20px;
+
+      border-radius: 50%;
+
+      min-block-size: 5rem;
+
+      background-color:darkgreen;
+
+
+
+  }
