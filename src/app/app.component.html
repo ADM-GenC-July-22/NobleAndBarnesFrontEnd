@@ -1,26 +1,25 @@
-<div class="top-menu">
-
-  Noble And Barnes
-
-</div>
+<div class="top-menu">Noble And Barnes</div>
+<div class="top">Welcome to Noble and Barnes</div><br>
 
 
-
-
-<div class="top">Welcome to Noble and Barnes</div>
-
-<br>
-
+<div *ngIf="status==='Logging'">
 <div class="center">Are you an existing customer?
-
   <br>
 
 </div>
 
 
-
 <div class="center">
-
   <button class="button" color="green" mat-button>Yes</button>
+  <button class="button" mat-mini-fab>No</button>
+</div>
+</div>
 
-  <button class="button" mat-mini-fab>No</button></div>
+<div *ngIf="status==='Home'">
+  <app-home (dataEvent)="getStatus($event)"></app-home>
+</div>
+
+<div *ngIf="status==='StartShopping'">
+  <app-shopping></app-shopping>
+</div>
+{{status}}

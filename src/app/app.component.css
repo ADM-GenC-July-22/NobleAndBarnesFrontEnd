@@ -1,8 +1,8 @@
 .top-menu {
 
-    background:brown;
+    background: #094074;
 
-    padding: 2px 15px;
+    padding: 35px 15px;
 
     text-align: left;
 
@@ -11,8 +11,9 @@
     justify-content:start;
 
     font-size: 34px;
-
-    color:blanchedalmond;
+  font-weight:bolder;
+  font-style: italic;
+    color: #fe9000;
 
 }
 
@@ -27,7 +28,7 @@
 
     margin-bottom: 5rem;
 
-    color:darkred;
+    color:#fe9000;
 
     font-style: oblique;
 
@@ -47,9 +48,8 @@
 
       margin-bottom: 3rem;
 
-      color:darkgreen;
+      color:#094074;
 
-    font-style: oblique;
 
     font-size: 36px;
 
@@ -65,7 +65,7 @@
 
       border:none;
 
-      color:blanchedalmond;
+      color:#fe9000;
 
       padding: 20px;
 
@@ -73,7 +73,7 @@
 
       min-block-size: 5rem;
 
-      background-color:darkgreen;
+      background: color #3c6997;;
 
 
 
