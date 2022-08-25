@@ -4,11 +4,13 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { ShowLen } from './app.length';
+import { ExistingCustomerpageComponent } from './existing-customerpage/existing-customerpage.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ShowLen
+    ShowLen,
+    ExistingCustomerpageComponent
   ],
   imports: [
     BrowserModule,
