@@ -7,6 +7,9 @@ import { FormBuilder, FormControl, FormsModule } from '@angular/forms';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  onYes() {
+    
+  }
   constructor(){
    
   }
