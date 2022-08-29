@@ -37,9 +37,9 @@ export class CustomerService {
   // this.custService.getCustomerObj(this.custService.getCustomerId()).subscribe((data: Customer[]) =>  {
   //   console.log(data);
   // });
-  
-  loginCustomer(phoneNumber:number): Observable<Customer[]>{
-    return this.http.get<Customer[]>(`${this.baseUrl}/${phoneNumber}/phonenumber`);
+
+  loginCustomer(phoneNumber:number): Observable<Customer>{
+    return this.http.get<Customer>(`${this.baseUrl}/${phoneNumber}/phonenumber`);
   }
 
 }

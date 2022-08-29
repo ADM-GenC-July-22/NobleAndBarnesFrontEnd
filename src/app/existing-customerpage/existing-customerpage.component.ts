@@ -21,26 +21,26 @@ export class ExistingCustomerpageComponent implements OnInit {
   customerID: number = 4;
   addressID: number = 4;
 
-  customers: Customer[];
+  customers: Customer;
   constructor(private custService: CustomerService) { 
 
   }
   
   submit(val:string) {
+    // Initial Ids for customer and Address
+    console.log("app component addressID:" + this.custService.getAddressID());
+    console.log("app component custID:" + this.custService.getCustomerId());
+
     console.warn(val)
     this.phoneNumber = val
-    this.custService.loginCustomer(this.phoneNumber).subscribe((data: Customer[]) =>  {
+    this.custService.loginCustomer(this.phoneNumber).subscribe((data: Customer) =>  {
       console.log(data);
+      this.custService.setCustomerID(data.customerID);
+      this.custService.setAddressID(data.addressObj.addressID);
       this.customers = data;
       
     });
-    console.log(this.customers);
-
-    this.custService.setCustomerID(this.customers.at(0).customerID);
-    this.custService.setAddressID(this.customers.at(0).addressObj.addressID);
-
-    console.log("app component addressID:" + this.custService.getAddressID());
-    console.log("app component custID:" + this.custService.getCustomerId());
+ 
   }
 
   close() {
