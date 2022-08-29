@@ -12,32 +12,40 @@ import { CustomerServiceService } from '../customer-service.service';
 })
 export class CustomerComponent implements OnInit {
 
+//customer: Customer;
 
   customer = {
-    "customerID": NaN,
+    "customerID": 1,
     "firstName": "",
     "lastName": "",
     "email": "",
     "phoneNumber": NaN,
     "addressObj": {
-      "addressID": NaN,
+      "addressID": 1,
       "unitNumber": NaN,
       "streetName": "",
       "city": "",
       "state" : "",
-      "zipcode": NaN
+      "zipCode": NaN
     }
   };
 
-
+private customertest: Customer[]
   constructor(private customerService : CustomerServiceService) { }
+  
 
 
   submit() {
+    // this.customer.customerID = 1;
+    // this.customer.addressObj.addressID = 1;
     console.log('user data', this.customer);
-    this.customerService.updateCustomer(this.customer.customerID, this.customer);
+    this.customerService.updateCustomer(this.customer)
+    .subscribe();
+
 
     }
+
+    
 
     ngOnInit(): void {
       

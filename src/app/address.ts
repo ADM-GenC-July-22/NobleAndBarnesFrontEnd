@@ -5,6 +5,6 @@ export class Address {
         public streetName : string,
         public city : string,
         public state : string,
-        public zipcode : number
+        public zipCode : number
         ){}
 }

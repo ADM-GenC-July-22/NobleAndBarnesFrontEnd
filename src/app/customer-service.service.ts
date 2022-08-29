@@ -13,8 +13,14 @@ export class CustomerServiceService {
   constructor(private http:HttpClient) { }
 
  
-  updateCustomer(id:number, customer:Customer): Observable<Object>{
+  updateCustomer(customer:Customer): Observable<Object>{
 
-      return this.http.put(`${this.baseUrl}/${id}`, customer );
+     // console.log('user data', customer);
+      let httpOptions = {}
+
+      return this.http.put<any>(`${this.baseUrl}`, customer, httpOptions );
+
     }
+    
+
   }

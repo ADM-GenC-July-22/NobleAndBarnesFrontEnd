@@ -3,44 +3,44 @@
 <div class="form-body">
     <div class="d-flex">
         <div class="col-6">
-            <input type="text" placeholder="First Name" name="firstname" [(ngModel)]="customer.firstName" />
+            <input type="text" required placeholder="First Name" name="firstname" [(ngModel)]="customer.firstName" />
         </div>
         <div class="col-6">
-            <input type="text" placeholder="Last Name" name="lastname" [(ngModel)]="customer.lastName" />
+            <input type="text" required placeholder="Last Name" name="lastname" [(ngModel)]="customer.lastName" />
         </div>
     </div>
     <div class="pt-3">
-        <input type="email" placeholder="Email" style="width: 410px;" name="email" [(ngModel)]="customer.email" />
+        <input type="email" required placeholder="Email" style="width: 410px;" name="email" [(ngModel)]="customer.email" />
     </div>
     <div class="d-flex pt-3">
         <div>
-            <input type="text" placeholder="Phone Number" style="width: 410px;" name="phonenumber"
+            <input type="tel" required placeholder="Phone Number" style="width: 410px;" name="phonenumber"
                 [(ngModel)]="customer.phoneNumber" />
         </div>
     </div>
     <div class="d-flex pt-3">
         <div>
-            <input type="text" placeholder="Unit Number" style="width: 410px;" name="unitNumber"
+            <input type="number" required placeholder="Unit Number" style="width: 410px;" name="unitNumber"
                 [(ngModel)]="customer.addressObj.unitNumber" />
         </div>
     </div>
     <div class="d-flex pt-3">
         <div>
-            <input type="text" placeholder="Street Name" style="width: 410px;" name="streetName"
+            <input type="text" required placeholder="Street Name" style="width: 410px;" name="streetName"
                 [(ngModel)]="customer.addressObj.streetName" />
         </div>
     </div>
     <div class="d-flex pt-3">
         <div class="col-6">
-            <input type="text" placeholder="City" name="city" [(ngModel)]="customer.addressObj.city" />
+            <input type="text" required placeholder="City" name="city" [(ngModel)]="customer.addressObj.city" />
         </div>
         <div class="col-6">
-            <input type="text" placeholder="State" name="state" [(ngModel)]="customer.addressObj.state" />
+            <input type="text" required minlength="4" maxlength="13" placeholder="State (Ex. Florida)" name="state" [(ngModel)]="customer.addressObj.state" />
         </div>
     </div>
     <div class="d-flex pt-3">
         <div>
-            <input type="text" placeholder="Zip Code" name="zipcode" [(ngModel)]="customer.addressObj.zipcode" />
+            <input type="number" required minlength="5" maxlength="5" placeholder="Zip Code" name="zipcode" [(ngModel)]="customer.addressObj.zipCode" />
         </div>
     </div>
     <div class="pt-3" style="text-align: center;">
