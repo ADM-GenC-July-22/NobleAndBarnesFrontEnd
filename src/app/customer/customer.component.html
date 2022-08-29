@@ -1,49 +1,54 @@
 <h1 mat-dialog-title style="text-align: center;">Update Info</h1>
-
-<div class="form-body">
-    <div class="d-flex">
-        <div class="col-6">
-            <input type="text" required placeholder="First Name" name="firstname" [(ngModel)]="customer.firstName" />
+ <form #updateForm="ngForm" novalidate> 
+    <div class="form-body" style="text-align: center;">
+        <div class="d-flex">
+            <div class="col-6">
+                <input type="text" required placeholder="First Name" name="firstname"
+                    [(ngModel)]="customer.firstName" />
+            </div>
+            <div class="col-6">
+                <input type="text" required placeholder="Last Name" name="lastname" [(ngModel)]="customer.lastName" />
+            </div>
         </div>
-        <div class="col-6">
-            <input type="text" required placeholder="Last Name" name="lastname" [(ngModel)]="customer.lastName" />
+        <div class="pt-3">
+            <input type="text" email required placeholder="Email" style="width: 410px;" name="email"
+                [(ngModel)]="customer.email" />
+        </div>
+        <div class="d-flex pt-3">
+            <div>
+                <input type="text" required minlength="10" maxlength="10" placeholder="Phone Number" style="width: 410px;" name="phonenumber"
+                    [(ngModel)]="customer.phoneNumber" />
+            </div>
+        </div>
+        <div class="d-flex pt-3">
+            <div>
+                <input type="number" required placeholder="Unit Number" style="width: 410px;" name="unitNumber"
+                    [(ngModel)]="customer.addressObj.unitNumber" />
+            </div>
+        </div>
+        <div class="d-flex pt-3">
+            <div>
+                <input type="text" required placeholder="Street Name" style="width: 410px;" name="streetName"
+                    [(ngModel)]="customer.addressObj.streetName" />
+            </div>
+        </div>
+        <div class="d-flex pt-3">
+            <div class="col-6">
+                <input type="text" required placeholder="City" name="city" [(ngModel)]="customer.addressObj.city" />
+            </div>
+            <div class="col-6">
+                <input type="text" required minlength="4" maxlength="13" placeholder="State (Ex. Florida)" name="state"
+                    [(ngModel)]="customer.addressObj.state" />
+            </div>
+        </div>
+        <div class="d-flex pt-3">
+            <div>
+                <input type="text" required minlength="5" maxlength="5" placeholder="Zip Code" name="zipcode"
+                    [(ngModel)]="customer.addressObj.zipCode" />
+            </div>
+        </div>
+        <div class="pt-3" style="text-align: center;">
+            <button mat-button [disabled]="!updateForm.valid" (click)="submit()">Submit</button>
         </div>
     </div>
-    <div class="pt-3">
-        <input type="email" required placeholder="Email" style="width: 410px;" name="email" [(ngModel)]="customer.email" />
-    </div>
-    <div class="d-flex pt-3">
-        <div>
-            <input type="tel" required placeholder="Phone Number" style="width: 410px;" name="phonenumber"
-                [(ngModel)]="customer.phoneNumber" />
-        </div>
-    </div>
-    <div class="d-flex pt-3">
-        <div>
-            <input type="number" required placeholder="Unit Number" style="width: 410px;" name="unitNumber"
-                [(ngModel)]="customer.addressObj.unitNumber" />
-        </div>
-    </div>
-    <div class="d-flex pt-3">
-        <div>
-            <input type="text" required placeholder="Street Name" style="width: 410px;" name="streetName"
-                [(ngModel)]="customer.addressObj.streetName" />
-        </div>
-    </div>
-    <div class="d-flex pt-3">
-        <div class="col-6">
-            <input type="text" required placeholder="City" name="city" [(ngModel)]="customer.addressObj.city" />
-        </div>
-        <div class="col-6">
-            <input type="text" required minlength="4" maxlength="13" placeholder="State (Ex. Florida)" name="state" [(ngModel)]="customer.addressObj.state" />
-        </div>
-    </div>
-    <div class="d-flex pt-3">
-        <div>
-            <input type="number" required minlength="5" maxlength="5" placeholder="Zip Code" name="zipcode" [(ngModel)]="customer.addressObj.zipCode" />
-        </div>
-    </div>
-    <div class="pt-3" style="text-align: center;">
-        <button mat-button (click)="submit()">Submit</button>
-    </div>
-</div>
+</form>
