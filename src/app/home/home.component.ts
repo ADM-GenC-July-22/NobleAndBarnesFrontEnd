@@ -1,6 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { CustomerService } from '../customer.service';
-
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -11,9 +11,13 @@ export class HomeComponent implements OnInit {
 
   @Output() dataEvent = new EventEmitter<string>();
   
-  constructor(private customerService:CustomerService) { }
+  constructor(private customerService:CustomerService, private router:Router) { }
 
   ngOnInit(): void {
+  }
+
+  changeRoute(pathname:String):void{
+    this.router.navigate([`${pathname}`]);
   }
 
   changeStatus(value:string) : void{

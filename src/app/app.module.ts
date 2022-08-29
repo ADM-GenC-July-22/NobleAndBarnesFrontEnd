@@ -4,18 +4,17 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { ShowLen } from './app.length';
-import { HomeComponent } from './home/home.component';
-import { ShoppingComponent } from './shopping/shopping.component';
+import { AppRoutingModule, routingComponents } from './app-routing.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     ShowLen,
-    HomeComponent,
-    ShoppingComponent
+    routingComponents
   ],
   imports: [
     BrowserModule,
+    AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
     FormsModule

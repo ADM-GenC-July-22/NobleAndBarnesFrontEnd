@@ -52,7 +52,8 @@ button{
   white-space: nowrap;
   will-change: box-shadow,transform;
   font-size: 18px;
-  margin-left: 25px;
+  margin-left: 95px;
+  margin-right: 75px;
 }
 
 .button-30:focus {
