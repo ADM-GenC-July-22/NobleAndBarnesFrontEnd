@@ -1,7 +1,7 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { CustomerService } from '../customer.service';
 import { Router } from '@angular/router';
-
+import { Customer } from '../customer';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -29,7 +29,11 @@ export class HomeComponent implements OnInit {
     goahead = confirm('Do you want to delete?');
     if(goahead)
     {
-      this.customerService.deleteCustomer(6).subscribe(
+
+      let currentCustomerId = this.customerService.getCustomerId();
+      console.log(currentCustomerId);
+
+      this.customerService.deleteCustomer(currentCustomerId).subscribe(
         () => this.dataEvent.emit('Logging')
       );
     }

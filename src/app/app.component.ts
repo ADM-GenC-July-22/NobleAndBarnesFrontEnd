@@ -8,12 +8,10 @@ import { Router } from '@angular/router';
 })
 export class AppComponent {
 
-  
   status : string='Home';
   currentUserId: number | undefined;
   
   constructor(private router:Router){
-   
   }
 
   goToPage(pageName:string):void{

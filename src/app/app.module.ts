@@ -5,12 +5,17 @@ import {HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { ShowLen } from './app.length';
 import { AppRoutingModule, routingComponents } from './app-routing.module';
+import { ExistingCustomerpageComponent } from './existing-customerpage/existing-customerpage.component';
+import { EntrypageComponent } from './entrypage/entrypage.component';
+import { CustomerService } from './customer.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     ShowLen,
-    routingComponents
+    routingComponents,
+    ExistingCustomerpageComponent,
+    EntrypageComponent
   ],
   imports: [
     BrowserModule,
@@ -19,7 +24,7 @@ import { AppRoutingModule, routingComponents } from './app-routing.module';
     ReactiveFormsModule,
     FormsModule
   ],
-  providers: [],
+  providers: [CustomerService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
