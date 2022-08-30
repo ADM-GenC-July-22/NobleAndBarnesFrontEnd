@@ -1,15 +1,162 @@
-<div class="existtext" style="text-align: center;">
-<div>Name: {{customerExisting?.firstName}}, {{customerExisting?.lastName}}</div>
-<div>Phone Number: {{customerExisting?.phoneNumber}}</div>
-<div>Email: {{customerExisting?.email}}</div>
-<div>ADDRESS: </div>
-<div>{{customerExisting?.addressObj?.unitNumber}}, {{customerExisting?.addressObj?.streetName}}, 
-{{customerExisting?.addressObj?.streetName}},
+<div class="items" style="text-align: left;">Current Info
+    <br>
+Name: {{customerExisting?.firstName}}, {{customerExisting?.lastName}}<br>
+Phone Number: {{customerExisting?.phoneNumber}}
+Email: {{customerExisting?.email}} <br>
+Address: <br>
+{{customerExisting?.addressObj?.unitNumber}}, {{customerExisting?.addressObj?.streetName}}, 
+<br>
 {{customerExisting?.addressObj?.city}},
 {{customerExisting?.addressObj?.state}},
 {{customerExisting?.addressObj?.zipCode}}
+
 </div>
 
+
+<div style="text-align: center;">
+    <h1 class="titleup" mat-dialog-title style="text-align: center;">Update Info</h1>
+
+    <form [formGroup]="requiredForm" novalidate class="formfields" style="text-align: center;">
+        <div class="form-group">
+            <label class="center-block">First Name:
+                <input class="form-control" formControlName="firstName" placeholder="First Name" [(ngModel)]="customer.firstName" />
+            </label>
+        </div>
+        <div *ngIf="requiredForm.controls['firstName'].invalid && requiredForm.controls['firstName'].touched"
+            class="alert alert-danger">
+            <div class='error' *ngIf="requiredForm.controls['firstName'].errors.pattern">
+                First Name must be only letters.
+            </div>
+            <div class='error' *ngIf="requiredForm.controls['firstName'].errors.required">
+                First Name is required.
+            </div>
+            <div class='error' *ngIf="requiredForm.controls['firstName'].errors.minlength">
+                First Name too short.
+            </div>
+            <div class='error' *ngIf="requiredForm.controls['firstName'].errors.maxlength">
+                First Name too long. 
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="center-block">Last Name:
+                <input class="form-control" formControlName="lastName" placeholder="Last Name" name="customer.lastName" [(ngModel)]="customer.lastName"/>
+            </label>
+        </div>
+        <div *ngIf="requiredForm.controls['lastName'].invalid && requiredForm.controls['lastName'].touched"
+            class="alert alert-danger">
+            <div class='error' *ngIf="requiredForm.controls['lastName'].errors.required">
+                Last Name is required.
+            </div>
+            <div class='error' *ngIf="requiredForm.controls['lastName'].errors.pattern">
+                Last Name must only be letters.
+            </div>
+            <div class='error' *ngIf="requiredForm.controls['lastName'].errors.minlength">
+                Last Name too short
+            </div>
+            <div class='error' *ngIf="requiredForm.controls['lastName'].errors.maxlength">
+                Last Name too long.
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="center-block">Email:
+                <input class="form-control" formControlName="email" placeholder="Email" style="width: 410px;"
+                    name="email" [(ngModel)]="customer.email" />
+            </label>
+        </div>
+        <div *ngIf="requiredForm.controls['email'].invalid && requiredForm.controls['email'].touched"
+            class="alert alert-danger">
+            <div class='error' *ngIf="requiredForm.controls['email'].errors.required">
+                Email is required.
+            </div>
+            <div class='error' *ngIf="requiredForm.controls['email'].errors.pattern">
+                Email is invalid.
+            </div>
+        </div>
+        <label class="center-block">Phone Number:
+            <input type="number"  required placeholder="Phone Number" style="width: 410px;" name="phoneNumber"
+                [(ngModel)]="customer.phoneNumber" [ngModelOptions]="{standalone: true}"/>
+            </label>
+
+        <br>
+        <label class="center-block">Unit Number:
+        <input type="number" required placeholder="Unit Number" style="width: 410px;" name="unitNumber"
+            [(ngModel)]="customer.addressObj.unitNumber" [ngModelOptions]="{standalone: true}"/>
+        </label>
+
+            <div class="form-group">
+                <label class="center-block">Street Name:
+                    <input class="form-control" formControlName="streetName" placeholder="Street Name"
+                        style="width: 410px;" name="streetName" [(ngModel)]="customer.addressObj.streetName" />
+                </label>
+            </div>
+            <div *ngIf="requiredForm.controls['streetName'].invalid && requiredForm.controls['streetName'].touched"
+                class="alert alert-danger">
+                <div class='error' *ngIf="requiredForm.controls['streetName'].errors.required">
+                    Street Name is required.
+                </div>
+                <div class='error' *ngIf="requiredForm.controls['streetName'].errors.pattern">
+                    Street Name must be only letters or numbers.
+                </div>
+                <div class='error' *ngIf="requiredForm.controls['streetName'].errors.maxlength">
+                    Street Name must be shorter.
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="center-block">City:
+                    <input class="form-control" formControlName="city" placeholder="City"
+                        style="width: 410px;" name="city" [(ngModel)]="customer.addressObj.city" />
+                </label>
+            </div>
+            <div *ngIf="requiredForm.controls['city'].invalid && requiredForm.controls['city'].touched"
+                class="alert alert-danger">
+                <div class='error' *ngIf="requiredForm.controls['city'].errors.required">
+                    City is required.
+                </div>
+                <div class='error' *ngIf="requiredForm.controls['city'].errors.pattern">
+                    City must be only letters.
+                </div>
+                <div class='error' *ngIf="requiredForm.controls['city'].errors.maxlength">
+                    City must be shorter.
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="center-block">State:
+                    <input class="form-control" formControlName="state" placeholder="State"
+                        style="width: 410px;" name="state" [(ngModel)]="customer.addressObj.state" />
+                </label>
+            </div>
+            <div *ngIf="requiredForm.controls['state'].invalid && requiredForm.controls['state'].touched"
+                class="alert alert-danger">
+                <div class='error' *ngIf="requiredForm.controls['state'].errors.required">
+                    State is required.
+                </div>
+                <div class='error' *ngIf="requiredForm.controls['state'].errors.pattern">
+                    State must be letters.
+                </div>
+                <div class='error' *ngIf="requiredForm.controls['state'].errors.minlength">
+                    State must be at least 4 letters.
+                </div>
+                <div class='error' *ngIf="requiredForm.controls['state'].errors.maxlength">
+                    State must be 13 letters or shorter.
+                </div>
+            </div>
+        <label class="center-block">ZipCode:
+        <input type="number"  required minlength="5" maxlength="5" placeholder="Zip Code" name="zipcode"
+            [(ngModel)]="customer.addressObj.zipCode" [ngModelOptions]="{standalone: true}"/>
+        </label>
+
+    </form>
+
+    <button  class="button-52" mat-button [disabled]="!requiredForm.valid" (click)="submit()">Submit</button>
+    <button  class="button-52" (click)="close('home')">Cancel</button>
+</div>
+
+
+<!--
 <h1 mat-dialog-title style="text-align: center;">Update Info</h1>
  <form #updateForm="ngForm" novalidate> 
     <div class="form-body" style="text-align: center;">
@@ -65,3 +212,4 @@
         </div>
     </div>
 </form>
+-->

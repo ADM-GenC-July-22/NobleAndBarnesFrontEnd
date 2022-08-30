@@ -1,8 +1,9 @@
 .top-menu {
 
-    background: #ffffff;
+    background: #094074;
 
-    padding: 33px 14px;
+    font-family:'Times New Roman', Times, serif;
+    padding: 39px 14px;
 
     text-align: left;
 
@@ -20,12 +21,14 @@
 
 
 
+
+
 .center {
 
     display: flex;
 
     justify-content: center;
-
+    font-family:'Times New Roman', Times, serif;
     margin-bottom: 5rem;
 
     color:#fe9000;
@@ -41,23 +44,27 @@
   .top{
 
     display: flex;
+    font-family:'Times New Roman', Times, serif;
+    background: #fe9000;
+
+    padding: 13px 14px;
 
     justify-content: center;
 
-      margin-top: 2rem;
 
       margin-bottom: 3rem;
 
       color:#094074;
 
 
-    font-size: 36px;
+    font-size: 26px;
 
   }
 
   .button-52 {
     
     font-size: 16px;
+    font-family:'Times New Roman', Times, serif;
     font-weight: 200;
     letter-spacing: 1px;
     padding: 13px 20px 13px;
@@ -99,3 +106,6 @@
       padding: 13px 50px 13px;
     }
   }
+
+
+  
