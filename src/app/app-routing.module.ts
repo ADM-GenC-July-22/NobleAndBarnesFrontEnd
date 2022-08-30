@@ -5,13 +5,15 @@ import { ExistingCustomerpageComponent } from './existing-customerpage/existing-
 import { HomeComponent } from './home/home.component';
 import { RegisterCustomerComponent } from './register-customer/register-customer.component';
 import { ShoppingComponent } from './shopping/shopping.component';
+import { CustomerComponent } from './customer/customer.component';
 
 const routes: Routes =[
     {path: 'home', component: HomeComponent},
     { path: 'shopping', component:ShoppingComponent},
-    {path:'updateCustomer', component:ShoppingComponent},
+    {path:'updateCustomer', component:CustomerComponent},
     {path:'existingCustomer', component:ExistingCustomerpageComponent},
     {path:'',component:EntrypageComponent},
+    
     
 ];
 
@@ -20,4 +22,4 @@ const routes: Routes =[
     exports:[RouterModule]
 })
 export class AppRoutingModule{}
-export const routingComponents = [HomeComponent,ShoppingComponent,ExistingCustomerpageComponent,EntrypageComponent];
+export const routingComponents = [HomeComponent,ShoppingComponent,CustomerComponent,ExistingCustomerpageComponent,EntrypageComponent];

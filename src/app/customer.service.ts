@@ -30,8 +30,8 @@ export class CustomerService {
     return CustomerService.customerID;
   }
 
-  getCustomerObj(custID:number): Observable<Customer[]>{
-    return this.http.get<Customer[]>(`${this.baseUrl}/${custID}`);
+  getCustomerObj(custID:number): Observable<Customer>{
+    return this.http.get<Customer>(`${this.baseUrl}/${custID}`);
   }
 
   // MASON/GEORGE Call for customer object and address nested object from my login information
@@ -67,4 +67,13 @@ export class CustomerService {
       return this.http.delete<void>(`${this.baseUrl}/${id}`);
       
     }
+
+    updateCustomer(customer:Customer): Observable<Object>{
+
+      // console.log('user data', customer);
+       let httpOptions = {}
+       
+       return this.http.put<any>(`${this.baseUrl}`, customer, httpOptions );
+ 
+     }
 }

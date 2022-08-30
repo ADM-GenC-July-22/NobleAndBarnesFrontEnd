@@ -11,6 +11,7 @@ import { EntrypageComponent } from './entrypage/entrypage.component';
 import { CustomerService } from './customer.service';
 import { RegisterCustomerComponent } from './register-customer/register-customer.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { CustomerComponent } from './customer/customer.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { MatDialogModule } from '@angular/material/dialog';
     routingComponents,
     ExistingCustomerpageComponent,
     EntrypageComponent,
-    RegisterCustomerComponent
+    RegisterCustomerComponent,
+    CustomerComponent
   ],
   imports: [
     BrowserModule,
