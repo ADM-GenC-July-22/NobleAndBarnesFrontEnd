@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs/internal/Observable';
 import { Customer } from './customer';
+
 
 @Injectable({
   providedIn: 'root'
@@ -40,6 +41,25 @@ export class CustomerService {
 
   loginCustomer(phoneNumber:number): Observable<Customer>{
     return this.http.get<Customer>(`${this.baseUrl}/${phoneNumber}/phonenumber`);
+  }
+  generalPostCall(requestParam: any) {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Accept': '*/*'
+      })
+    }
+    const addressObj = {
+     unitNumber: requestParam.unitNumber,
+     streetName:requestParam.streetName,
+     city:requestParam.city,
+     state: requestParam.state,
+     zipCode:requestParam.zipCode
+    }
+    const paramObj = requestParam;
+    paramObj.addressObj = addressObj;
+    console.log(requestParam)
+    return this.http.post(this.baseUrl, requestParam, {...httpOptions})
   }
 
   deleteCustomer(id:number): Observable<void>{

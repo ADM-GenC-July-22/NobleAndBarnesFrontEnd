@@ -3,6 +3,7 @@ import { Routes, RouterModule} from '@angular/router';
 import { EntrypageComponent } from './entrypage/entrypage.component';
 import { ExistingCustomerpageComponent } from './existing-customerpage/existing-customerpage.component';
 import { HomeComponent } from './home/home.component';
+import { RegisterCustomerComponent } from './register-customer/register-customer.component';
 import { ShoppingComponent } from './shopping/shopping.component';
 
 const routes: Routes =[
@@ -10,7 +11,8 @@ const routes: Routes =[
     { path: 'shopping', component:ShoppingComponent},
     {path:'updateCustomer', component:ShoppingComponent},
     {path:'existingCustomer', component:ExistingCustomerpageComponent},
-    {path:'',component:EntrypageComponent}
+    {path:'',component:EntrypageComponent},
+    
 ];
 
 @NgModule({
