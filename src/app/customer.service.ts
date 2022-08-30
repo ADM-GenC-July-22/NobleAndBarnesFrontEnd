@@ -9,25 +9,25 @@ import { Customer } from './customer';
 })
 export class CustomerService {
 
-  customerID: number = 2;
-  addressID: number = 2;
+  static customerID: number = 2;
+  static addressID: number = 2;
   private baseUrl = "http://localhost:8082/customers";
  
   constructor(private http:HttpClient) { 
   }
 
   setCustomerID(newID: number) {
-    this.customerID = newID;
-    console.log(this.customerID);
+    CustomerService.customerID = newID;
+    console.log(CustomerService.customerID);
   }
   setAddressID(newID: number) {
-    this.addressID = newID;
+    CustomerService.addressID = newID;
   }
   getAddressID() {
-    return this.addressID;
+    return CustomerService.addressID;
   }
   getCustomerId() {
-    return this.customerID;
+    return CustomerService.customerID;
   }
 
   getCustomerObj(custID:number): Observable<Customer[]>{
@@ -42,7 +42,7 @@ export class CustomerService {
   loginCustomer(phoneNumber:number): Observable<Customer>{
     return this.http.get<Customer>(`${this.baseUrl}/${phoneNumber}/phonenumber`);
   }
-  generalPostCall(requestParam: any) {
+  generalPostCall(requestParam: any) : Observable<Customer> {
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
@@ -59,7 +59,7 @@ export class CustomerService {
     const paramObj = requestParam;
     paramObj.addressObj = addressObj;
     console.log(requestParam)
-    return this.http.post(this.baseUrl, requestParam, {...httpOptions})
+    return this.http.post<Customer>(this.baseUrl, requestParam, {...httpOptions})
   }
 
   deleteCustomer(id:number): Observable<void>{

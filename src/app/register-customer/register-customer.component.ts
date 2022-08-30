@@ -30,6 +30,8 @@ export class RegisterCustomerComponent implements OnInit {
    this.dataSource.generalPostCall(registerForm.form.value).subscribe((response) => {
       console.log('response', response);
        this.dialogRef.close();
+       this.dataSource.setAddressID(response.addressObj.addressID);
+       this.dataSource.setCustomerID(response.customerID);
     })
     this.route.navigateByUrl('/home');
   }

@@ -24,6 +24,10 @@ export class HomeComponent implements OnInit {
     this.dataEvent.emit(value);
   }
 
+  goToPage(pageName:string):void{
+    this.router.navigate([`${pageName}`]);
+  }
+  
   callDelete() : void{
     let goahead: boolean;
     goahead = confirm('Do you want to delete?');
@@ -31,11 +35,10 @@ export class HomeComponent implements OnInit {
     {
 
       let currentCustomerId = this.customerService.getCustomerId();
-      console.log(currentCustomerId);
-
       this.customerService.deleteCustomer(currentCustomerId).subscribe(
         () => this.dataEvent.emit('Logging')
       );
+      this.router.navigateByUrl('/');
     }
     else{
       this.dataEvent.emit('Home');

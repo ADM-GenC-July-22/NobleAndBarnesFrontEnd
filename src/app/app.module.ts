@@ -11,6 +11,7 @@ import { EntrypageComponent } from './entrypage/entrypage.component';
 import { CustomerService } from './customer.service';
 import { RegisterCustomerComponent } from './register-customer/register-customer.component';
 import { MatDialogModule } from '@angular/material/dialog';
+
 @NgModule({
   declarations: [
     AppComponent,
