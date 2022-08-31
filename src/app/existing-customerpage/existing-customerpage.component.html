@@ -1,0 +1,23 @@
+<div class="top-menu" >
+    {{ title }}
+  </div>
+  
+  <div class="items" style="text-align: center;">
+    Please enter your phone number:
+  </div>
+  
+ 
+
+  <div class="items" style="text-align: center;">
+    <div>
+    <input type="string" #box placeholder="Example: 3023673479" name="phoneNumber" />
+  </div></div><br>
+
+  
+  <div style="text-align: center;" >
+    <button class="button-52" mat-button (click)="close('')">Cancel</button>
+    &nbsp;
+    <button class="button-52" mat-button (click)="submit(box.value,'home')">Submit</button>
+  </div>
+  
+  

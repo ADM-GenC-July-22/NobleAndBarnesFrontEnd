@@ -1,0 +1,71 @@
+<style>
+
+</style>
+
+<h1 mat-dialog-title style="text-align: center;">Register</h1>
+<div mat-dialog-content>
+    <div class="form-body">
+        <form #userForm="ngForm" novalidate (ngSubmit) = "onSubmit(userForm)"> 
+            <div class="d-flex">
+                <div class="col-6">
+                    <input type="text" #firstname="ngModel" placeholder="First Name" name="firstName" required ngModel/> 
+                    <font *ngIf="firstname && !firstname.valid && (firstname.dirty || firstname.touched)" class="error-message"> Required Field First Name</font> 
+                </div>
+                <div class="col-6">
+                    <input type="text" #lastname="ngModel" placeholder="Last Name" name="lastName" required ngModel/>
+                    <font *ngIf="lastname && !lastname.valid && (lastname.dirty || lastname.touched)" class="error-message"> Required Field Last Name</font> 
+                </div>
+            </div>
+
+            <div class="pt-3">
+                <input type="text" #email="ngModel" placeholder="Email" email style="width: 410px;" name="email" ngModel required>
+                <font *ngIf="email && !email.valid && (email.dirty || email.touched)" class="error-message"> Required Field Email</font> 
+            </div>
+
+            <div class="d-flex pt-3">
+                <div>
+                    <input type="text" #phone="ngModel" placeholder="Phone Number" minlength="10" maxlength="10" style="width: 410px;" name="phoneNumber" ngModel required>
+                    <font *ngIf="phone && !phone.valid && (phone.dirty || phone.touched)" class="error-message"> Required Field Phone Number</font> 
+                </div>
+            </div>
+
+            <div class="d-flex pt-3">
+                <div>
+                    <input type="text" #unit="ngModel" placeholder="Unit Number" style="width: 410px;" name="unitNumber" ngModel required>
+                    <font *ngIf="unit && !unit.valid && (unit.dirty || unit.touched)" class="error-message"> Required Field Unit Number</font> 
+                </div>
+            </div>
+
+            <div class="d-flex pt-3">
+                <div>
+                    <input type="text" #street="ngModel" placeholder="streetName" style="width: 410px;" name="streetName" ngModel required> 
+                    <font *ngIf="street && !street.valid && (street.dirty || street.touched)" class="error-message"> Required Field Street Name</font>   
+                </div>
+            </div> 
+
+            <div class="d-flex pt-3">
+                <div class="col-6">
+                    <input type="text" #city="ngModel" placeholder="City"  name="city" ngModel required>
+                    <font *ngIf="city && !city.valid && (city.dirty || city.touched)" class="error-message"> Required Field City</font> 
+                </div>
+                <div class="col-6">
+                    <input type="text" #state="ngModel" placeholder="State"  name="state" ngModel required>
+                    <font *ngIf="state && !state.valid && (state.dirty || state.touched)" class="error-message"> Required Field State</font>
+                </div>
+            </div> 
+
+            <div class="d-flex pt-3">
+                <div>
+                    <input type="text" #zipcode="ngModel" placeholder="Zip Code" minlength="5" maxlength="5" name="zipCode" ngModel required>
+                    <font *ngIf="zipcode && !zipcode.valid && (zipcode.dirty || zipcode.touched)" class="error-message"> Required Field Zip Code</font>
+                </div>
+            </div>
+            <div class="pt-3" style="text-align: center;" >
+                <button type="button" (click)="close()">Cancel</button>
+                &nbsp;
+                <button type="submit" [disabled]="!userForm.valid">Submit</button>
+            </div>
+        </form>
+
+    </div>
+</div>
