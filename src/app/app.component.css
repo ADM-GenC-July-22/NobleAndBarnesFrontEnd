@@ -1,8 +1,9 @@
 .top-menu {
 
-    background:brown;
+    background: #094074;
 
-    padding: 2px 15px;
+    font-family:'Times New Roman', Times, serif;
+    padding: 39px 14px;
 
     text-align: left;
 
@@ -11,10 +12,13 @@
     justify-content:start;
 
     font-size: 34px;
-
-    color:blanchedalmond;
+  font-weight:bolder;
+  font-style: italic;
+    color: #fe9000;
 
 }
+
+
 
 
 
@@ -24,10 +28,10 @@
     display: flex;
 
     justify-content: center;
-
+    font-family:'Times New Roman', Times, serif;
     margin-bottom: 5rem;
 
-    color:darkred;
+    color:#fe9000;
 
     font-style: oblique;
 
@@ -40,41 +44,68 @@
   .top{
 
     display: flex;
+    font-family:'Times New Roman', Times, serif;
+    background: #fe9000;
+
+    padding: 13px 14px;
 
     justify-content: center;
 
-      margin-top: 2rem;
 
       margin-bottom: 3rem;
 
-      color:darkgreen;
-
-    font-style: oblique;
-
-    font-size: 36px;
-
-  }
-
-  button{
-
-      margin-right:3rem;
-
-      margin-left:3rem;
-
-      min-width: 5rem;
-
-      border:none;
-
-      color:blanchedalmond;
-
-      padding: 20px;
-
-      border-radius: 50%;
-
-      min-block-size: 5rem;
-
-      background-color:darkgreen;
+      color:#094074;
 
 
+    font-size: 26px;
 
   }
+
+  .button-52 {
+    
+    font-size: 16px;
+    font-family:'Times New Roman', Times, serif;
+    font-weight: 200;
+    letter-spacing: 1px;
+    padding: 13px 20px 13px;
+    display: inline-flex;
+    outline: 0;
+    border: 1px solid black;
+    margin-bottom: 50px;
+    cursor: pointer;
+    color:#fe9000;
+    margin-left: 75px;
+    height: 60px;
+    width: 80px;
+    position: relative;
+    background-color: rgba(0, 0, 0, 0);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+  }
+  
+  .button-52:after {
+    content: "";
+    background-color: #094074;
+    width: 100%;
+    z-index: -1;
+    position: absolute;
+    height: 100%;
+    top: 7px;
+    left: 7px;
+    transition: 0.2s;
+  }
+  
+  .button-52:hover:after {
+    top: 0px;
+    left: 0px;
+  }
+  
+  @media (min-width: 768px) {
+    .button-52 {
+      padding: 13px 50px 13px;
+    }
+  }
+
+
+  
