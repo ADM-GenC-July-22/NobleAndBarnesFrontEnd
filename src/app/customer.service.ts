@@ -11,7 +11,7 @@ export class CustomerService {
 
   static customerID: number = 2;
   static addressID: number = 2;
-  private baseUrl = "http://localhost:8082/customers";
+  private baseUrl = "http://nb-customerservice.eba-4udtrze3.us-west-2.elasticbeanstalk.com/customers";
  
   constructor(private http:HttpClient) { 
   }
